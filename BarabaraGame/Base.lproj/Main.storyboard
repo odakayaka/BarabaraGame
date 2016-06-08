@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="162.5" y="406.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Ranking View Controller-->
         <scene sceneID="ejU-5G-JNW">
             <objects>
-                <viewController id="WIl-re-IAP" sceneMemberID="viewController">
+                <viewController id="WIl-re-IAP" customClass="RankingViewController" customModule="BarabaraGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OXU-UI-ny6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,20 +125,28 @@
                                 <state key="normal" title="TOPへ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toTop" destination="WIl-re-IAP" eventType="touchUpInside" id="ebh-gS-p0Q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="rankingLabel1" destination="m4W-pq-bow" id="Hpy-Z7-Aln"/>
+                        <outlet property="rankingLabel2" destination="V7V-5z-bU1" id="kIt-Yd-Z1H"/>
+                        <outlet property="rankingLabel3" destination="HHJ-4l-vaz" id="zT7-uQ-dJK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7f-e1-95T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="650.5" y="761.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="3dv-gV-tBW">
             <objects>
-                <viewController id="TLM-gV-nkj" sceneMemberID="viewController">
+                <viewController id="TLM-gV-nkj" customClass="GameViewController" customModule="BarabaraGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eAN-sw-BQL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,6 +168,9 @@
                                 <state key="normal" title="Stop">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="stop" destination="TLM-gV-nkj" eventType="touchUpInside" id="D2b-dZ-uHx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aYE-sb-S7Y">
                                 <rect key="frame" x="239" y="33" width="116" height="39"/>
@@ -169,6 +180,9 @@
                                 <state key="normal" title="リトライ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="retry" destination="TLM-gV-nkj" eventType="touchUpInside" id="sUr-eO-L5P"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="on4-1n-D0j">
                                 <rect key="frame" x="20" y="33" width="116" height="39"/>
@@ -178,6 +192,9 @@
                                 <state key="normal" title="TOPへ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="toTOP" destination="TLM-gV-nkj" eventType="touchUpInside" id="fAv-jG-ff5"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tail.png" id="fmo-d2-uYA">
                                 <rect key="frame" x="161" y="100" width="52" height="103"/>
@@ -203,6 +220,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imgView1" destination="fmo-d2-uYA" id="5uO-fK-JaE"/>
+                        <outlet property="imgView2" destination="FIg-mU-js7" id="2fd-wn-t7K"/>
+                        <outlet property="imgView3" destination="JeF-d0-KvE" id="nw8-h4-iLa"/>
+                        <outlet property="resultLabel" destination="KII-d6-nfG" id="hal-UP-tUt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tLR-SN-pS2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
