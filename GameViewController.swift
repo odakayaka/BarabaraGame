@@ -48,12 +48,13 @@ class GameViewController: UIViewController {
         if timer.valid == true{ //もしタイマーが動いていたら
             timer.invalidate() //タイマーを無効にする
             
+        }
+        
         for i in 0..<3 {
             score = score - abs(Int(width/2 - positionX[i]))*2 //画像のずれた分だけスコアから値をひく
-            }
-            resultLabel.text = "Score : " + String(score) //結果ラベルにスコアを表示する
-            resultLabel.hidden = false //結果ラベルを隠さない
         }
+        resultLabel.text = "Score : " + String(score) //結果ラベルにスコアを表示する
+        resultLabel.hidden = false //結果ラベルを隠さない
         
         var highScore1: Int = defaults.integerForKey("score1") //score1というキーの値を取得
         var highScore2: Int = defaults.integerForKey("score2")
@@ -63,16 +64,16 @@ class GameViewController: UIViewController {
             defaults.setInteger(score , forKey: "score1") //score1という名前でscoreを保存
             defaults.setInteger(highScore1, forKey: "score2")
             defaults.setInteger(highScore2, forKey: "score3")
-        }else if score > highScore2{
+        }else if score > highScore2 && score != highScore1{
             defaults.setInteger(score, forKey: "score2")
             defaults.setInteger(highScore2, forKey:  "score3")
-        }else if score > highScore3{
+        }else if score > highScore3 && score != highScore1 && score != highScore2{
             defaults.setInteger(score, forKey: "score3")
         }
         defaults.synchronize()
         
     }
-    
+
     @IBAction func retry(){
             score  = 1000 //スコアの値をリセットする
             positionX = [width/2, width/2, width/2] //真ん中に戻す
